@@ -1,8 +1,25 @@
 <div class="content" role="main" class="iframe-wrapper">
   <!-- <div width="500" height="500" class="top-image" src="" [innerHTML]="yt | safe: 'html'"></div>-->
 
+
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+
+    <div class="form-group">
+
+      <label for="token">Token</label><br>
+
+      <input id="token" type="text" name="token" class = "form-control" ngModel>
+
+    </div>
+
+    <pre></pre>
+
+    <button class="btn btn-primary" type="submit">set parameters</button>
+
+  </form>
+
   <H2>IOD Client Web Page</H2>
-  <iframe width="500" height="500" class="top-image" src="https://qat.qa.loanhdsandbox.com/source/ui/user/list"></iframe>
+  <iframe width="500" height="500" class="top-image" [src]="iframeUrl"></iframe>
 
 </div>
 
