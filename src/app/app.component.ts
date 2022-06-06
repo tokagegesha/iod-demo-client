@@ -48,13 +48,13 @@ export class AppComponent {
   onSubmit = (f: NgForm) => {
     const data = f.value;
     // @ts-ignore
-    if (data['token']) {
-      this.iframeUrl = `https://exat.exa.loanhdsandbox.com/source/ui?`;
+    if (data.token) {
+      this.iframeUrl = `https://exat.exa.loanhdsandbox.com/source/ui?token=${data.token}`;
       console.log(22, document.getElementById('iframe_demo'))
       // @ts-ignore
       document.getElementById('iframe_demo').src = this.iframeUrl;
       // @ts-ignore
-      document.getElementById('iframe_demo').contentWindow.location.reload();
+      // document.getElementById('iframe_demo').contentWindow.location.reload();
     }
   }
 
